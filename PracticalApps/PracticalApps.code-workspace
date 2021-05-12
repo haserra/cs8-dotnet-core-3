@@ -1,14 +1,20 @@
 {
-  "folders": [
-    {
-      "path": "."
-    },
-    {
-      "path": "NorthwindEntitiesLib"
-    },
-    {
-      "path": "NorthwindMvc"
-    }
-  ],
-  "settings": {}
+	"folders": [
+		{
+			"path": "NorthwindMvc"
+		},
+		{
+			"path": "NorthwindWeb"
+		},
+		{
+			"path": "NorthwindContextLib"
+		},
+		{
+			"path": "NorthwindEntitiesLib"
+		},
+		{
+			"path": "NorthwindEmployees"
+		}
+	],
+	"settings": {}
 }

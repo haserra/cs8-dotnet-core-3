@@ -22,7 +22,8 @@ namespace NorthwindMvc.Controllers
         {
             return View();
         }
-
+        
+        [Route("private")]
         public IActionResult Privacy()
         {
             return View();
