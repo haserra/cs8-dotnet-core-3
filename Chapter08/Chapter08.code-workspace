@@ -1,0 +1,17 @@
+{
+  "folders": [
+    {
+      "path": "WorkingWithNumbers"
+    },
+    {
+      "path": "WorkingWithRegularExpressions"
+    },
+    {
+      "path": "WorkingWithLists"
+    },
+    {
+      "path": "WorkingWithDictionaries"
+    }
+  ],
+  "settings": {}
+}

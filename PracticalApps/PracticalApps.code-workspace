@@ -1,0 +1,14 @@
+{
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "NorthwindEntitiesLib"
+    },
+    {
+      "path": "NorthwindMvc"
+    }
+  ],
+  "settings": {}
+}
