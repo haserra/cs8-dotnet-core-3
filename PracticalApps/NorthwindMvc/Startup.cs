@@ -12,6 +12,8 @@ using NorthwindMvc.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Packt.Shared;
+using System.IO;
 
 namespace NorthwindMvc
 {
@@ -25,12 +27,18 @@ namespace NorthwindMvc
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
+        // example of registering a dependency service ASP.NET Core implements the dependency injection (DI) design pattern
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+            // configure the Northwind database context
+            string databasePath = Path.Combine("..", "Northwind.db" );
+
+            services.AddDbContext<Northwind>(options => options.UseSqlite($"Data Source = {databasePath}"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,6 +63,7 @@ namespace NorthwindMvc
             app.UseAuthentication();
             app.UseAuthorization();
 
+            // The responsibility of a route is to discover the name of a controller class to instantiate and an action method to execute to generate an HTTP response
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
